@@ -1,0 +1,25 @@
+.banner-area {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.678) 100%,
+      rgba(0, 0, 0, 0.582) 100%
+    ),
+    url("https://i.ibb.co/9qFDW0h/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.banner-text-area {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.banner-header {
+  font-size: 48px;
+}
+@media screen and (max-width: 767px) {
+  .banner-text-area {
+    width: 100%;
+  }
+}
