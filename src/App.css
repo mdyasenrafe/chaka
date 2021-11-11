@@ -13,3 +13,10 @@ body {
 .cursor-pointor {
   cursor: pointer;
 }
+.coustom-nav-link {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  list-style: none;
+  display: inline-block;
+}

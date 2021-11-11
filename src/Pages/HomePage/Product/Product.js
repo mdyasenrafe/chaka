@@ -3,7 +3,8 @@ import { Card, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Product = (props) => {
-  const { name, brand, image, description, price, cc, weight } = props.data;
+  const { name, brand, image, description, price, cc, weight, _id } =
+    props.data;
   return (
     <Col>
       <Card className="h-100 border-0 shadow-lg p-3 mx-3 mx-sm-3 mx-md-0">
@@ -28,7 +29,7 @@ const Product = (props) => {
           <Card.Text>{description}</Card.Text>
         </Card.Body>
         <Card.Footer className="text-center border-0">
-          <Link to={`/purchase`}>
+          <Link to={`/purchase/${_id}`}>
             <button className="btn bg-red">Purchase</button>
           </Link>
         </Card.Footer>

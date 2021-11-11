@@ -1,8 +1,10 @@
 import React from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
+import UseAuth from "../../../Hooks/UseAuth";
 
 const NavBar = () => {
+  const { user, logOut } = UseAuth();
   return (
     <Navbar bg="light" expand="lg">
       <Container>
@@ -21,30 +23,29 @@ const NavBar = () => {
             <LinkContainer to="/home">
               <Nav.Link>Home</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/about-us">
-              <Nav.Link>About</Nav.Link>
+            <LinkContainer to="/about">
+              <Nav.Link>About us</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/login">
-              <Nav.Link>Log in</Nav.Link>
+            <LinkContainer to="/products">
+              <Nav.Link>Products</Nav.Link>
             </LinkContainer>
-            <NavDropdown title="DashBoard" id="basic-nav-dropdown">
-              <LinkContainer to="/dashboard/my-order">
-                <NavDropdown.Item>My Orders</NavDropdown.Item>
+            {user?.displayName ? (
+              <>
+                <LinkContainer to="/dashboard">
+                  <Nav.Link>Dashboard</Nav.Link>
+                </LinkContainer>
+                <div>
+                  <span className="me-2">{user?.displayName}</span>
+                  <button onClick={logOut} className="btn bg-red">
+                    Logout
+                  </button>
+                </div>
+              </>
+            ) : (
+              <LinkContainer to="/login">
+                <Nav.Link>Log in</Nav.Link>
               </LinkContainer>
-              <NavDropdown.Item>Another action</NavDropdown.Item>
-              <NavDropdown.Item>Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item>Separated link</NavDropdown.Item>
-            </NavDropdown>
-            <NavDropdown title="Admin" id="basic-nav-dropdown">
-              <LinkContainer to="/dashboard/my-order">
-                <NavDropdown.Item>Manage All Orders</NavDropdown.Item>
-              </LinkContainer>
-              <NavDropdown.Item>Another action</NavDropdown.Item>
-              <NavDropdown.Item>Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item>Separated link</NavDropdown.Item>
-            </NavDropdown>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
