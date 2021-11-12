@@ -5,6 +5,7 @@ import Authprovider from "./Context/Authprovider";
 import DashBoard from "./Pages/DashBoardPage/DashBoard/DashBoard";
 import About from "./Pages/HomePage/About/About";
 import Home from "./Pages/HomePage/Home/Home";
+import Reviews from "./Pages/HomePage/Reviews/Reviews";
 import Login from "./Pages/LoginPage/Login/Login";
 import PrivateRoute from "./Pages/LoginPage/Login/PrivateRoute/PrivateRoute";
 import Resigter from "./Pages/LoginPage/Resigter/Resigter";
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <Route path="/products">
             <ProuductsPage></ProuductsPage>
+          </Route>
+          <Route path="/reviews">
+            <Reviews></Reviews>
           </Route>
           <Route path="/login">
             <Login></Login>

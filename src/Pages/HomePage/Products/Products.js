@@ -1,18 +1,13 @@
 import React from "react";
-import { css } from "@emotion/react";
-import ClipLoader from "react-spinners/ClipLoader";
+
 import { Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import UseProducts from "../../../Hooks/UseProducts";
 import Product from "../Product/Product";
+import LoadingSpiner from "../../SharedPage/LoadingSpiner/LoadingSpiner";
 
 const Products = () => {
   const { products, loading, color } = UseProducts();
-  const override = css`
-    display: block;
-    margin: 0 auto;
-    border-color: red;
-  `;
   return (
     <section className="py-5">
       <div className="text-center pb-4">
@@ -20,9 +15,7 @@ const Products = () => {
           <span>Our</span> <span className="text-red">Products</span>
         </h1>
       </div>
-      <div>
-        <ClipLoader color={color} loading={loading} css={override} size={100} />
-      </div>
+      <LoadingSpiner color={color} loading={loading}></LoadingSpiner>
       <Container>
         <Row xs={1} md={2} xxl={3} className="g-4">
           {products.slice(0, 6).map((data) => (

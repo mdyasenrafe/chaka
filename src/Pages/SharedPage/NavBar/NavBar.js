@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import UseAuth from "../../../Hooks/UseAuth";
+import Reviews from "../../HomePage/Reviews/Reviews";
 
 const NavBar = () => {
   const { user, logOut } = UseAuth();
@@ -28,6 +29,9 @@ const NavBar = () => {
             </LinkContainer>
             <LinkContainer to="/products">
               <Nav.Link>Products</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/reviews">
+              <Nav.Link>Reviews</Nav.Link>
             </LinkContainer>
             {user?.displayName ? (
               <>

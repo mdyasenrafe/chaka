@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const UseProducts = () => {
   const [products, setProducts] = useState([]);
+  const [manageProducts, setManageProducts] = useState([]);
   let [loading, setLoading] = useState(true);
   let [color, setColor] = useState("#ffffff");
   useEffect(() => {
@@ -9,13 +10,17 @@ const UseProducts = () => {
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
+        setManageProducts(data);
         setLoading(false);
       });
   }, []);
+  console.log(manageProducts);
   return {
     products,
     loading,
     color,
+    manageProducts,
+    setManageProducts,
   };
 };
 

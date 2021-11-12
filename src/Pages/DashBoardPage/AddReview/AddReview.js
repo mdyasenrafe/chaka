@@ -4,6 +4,7 @@ import { Container, Form, Row, Col, FloatingLabel } from "react-bootstrap";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import swal from "sweetalert";
 import UseAuth from "../../../Hooks/UseAuth";
+import axios from "axios";
 const AddReview = () => {
   const { user } = UseAuth();
   const {
@@ -11,8 +12,18 @@ const AddReview = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  let history = useHistory();
   const onSubmit = (data) => {
-    console.log(data);
+    axios
+      .post("https://cryptic-plains-45363.herokuapp.com/reviews", data)
+      .then((res) => {
+        if (res.data.acknowledged) {
+          swal("Your Review has been Added", {
+            icon: "success",
+          });
+          history.push("/home");
+        }
+      });
   };
   return (
     <section>
@@ -35,6 +46,22 @@ const AddReview = () => {
             className="mb-3"
             readOnly
           />
+        </FloatingLabel>
+        <FloatingLabel
+          controlId="floatingInput"
+          label="Enter Your Image Link"
+          className="mb-3"
+        >
+          <Form.Control
+            {...register("userImage", { required: true })}
+            type="text"
+            placeholder="Enter Your Image"
+            className="mb-3"
+          />
+
+          {errors.userImage && (
+            <span className="text-danger my-3">This field is required</span>
+          )}
         </FloatingLabel>
         <FloatingLabel
           controlId="floatingInput"

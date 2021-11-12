@@ -2,6 +2,7 @@
 
 body {
   font-family: "Poppins", sans-serif !important;
+  overflow-x: hidden;
 }
 .text-red {
   color: #e52727;

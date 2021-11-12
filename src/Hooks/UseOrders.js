@@ -21,7 +21,9 @@ const UseOrders = () => {
   }, []);
   return {
     orders,
+    setOrders,
     myOrders,
+    setMyOrders,
     loading,
     color,
   };
