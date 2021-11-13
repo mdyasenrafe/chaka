@@ -22,9 +22,9 @@ const AdminRoute = ({ children, ...rest }) => {
   if (!admin) {
     return (
       <div>
-        <h1>You Are Not Admin Pls Go Back To Your Home</h1>
-        <Link to="/home">
-          <button className="btn bg-red">home</button>
+        <h1>You Are Not Admin Pls Go Back To Your dashboard</h1>
+        <Link to="/dashboard">
+          <button className="btn bg-red">dashboarad</button>
         </Link>
       </div>
     );
@@ -39,7 +39,7 @@ const AdminRoute = ({ children, ...rest }) => {
         ) : (
           <Redirect
             to={{
-              pathname: "/",
+              pathname: "/dashboard",
               state: { from: location },
             }}
           />
