@@ -19,7 +19,7 @@ const MakeAdmin = () => {
     axios
       .put(`https://cryptic-plains-45363.herokuapp.com/users/admin`, data)
       .then((res) => {
-        if (res.data.modifiedCount > 0) {
+        if (res?.data?.modifiedCount > 0) {
           swal("Your Aceount is Admin Now", {
             icon: "success",
           });

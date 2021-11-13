@@ -23,9 +23,11 @@ const ManageAllOrders = () => {
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
-              const deleteProduct = orders.filter((data) => data._id !== id);
+              const deleteProduct = orders.filter(
+                (product) => product._id !== id
+              );
               setOrders(deleteProduct);
-              swal(`${user?.displayName} Order has been Delete now`, {
+              swal(`Order has been Delete now`, {
                 icon: "success",
               });
             }
@@ -49,9 +51,13 @@ const ManageAllOrders = () => {
           )
           .then((res) => {
             if (res.data.modifiedCount > 0) {
-              window.location.reload(false);
-              swal(`${user?.displayName} Order has Appove now`, {
+              swal({
+                text: `${data?.userName} order has been Approved`,
                 icon: "success",
+              }).then((willDelete) => {
+                if (willDelete) {
+                  window.location.reload();
+                }
               });
             }
           });

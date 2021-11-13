@@ -80,7 +80,7 @@ const UseFirebase = () => {
       .then((data) => {
         setAdmin(data.admin);
       });
-  }, [user.email]);
+  }, [user?.email]);
   return {
     user,
     setUser,

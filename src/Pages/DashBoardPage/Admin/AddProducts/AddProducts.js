@@ -18,7 +18,7 @@ const AddProducts = () => {
     axios
       .post("https://cryptic-plains-45363.herokuapp.com/products", data)
       .then((res) => {
-        if (res.data.acknowledged) {
+        if (res?.data?.acknowledged) {
           swal("Your Product has been Added", {
             icon: "success",
           });
