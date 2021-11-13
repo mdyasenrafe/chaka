@@ -6,7 +6,7 @@ const DashBoardHome = () => {
   return (
     <div>
       <h1>
-        Welcome To {user.displayName} {admin ? "admin" : "user"} Dashboard
+        Welcome To {user?.displayName} {admin ? "admin" : "user"} Dashboard
       </h1>
     </div>
   );

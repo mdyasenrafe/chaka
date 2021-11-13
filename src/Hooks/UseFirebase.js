@@ -18,6 +18,7 @@ const UseFirebase = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
   const [admin, setAdmin] = useState(false);
+  // const [loading , setLoading] = useState(true)
   const auth = getAuth();
   // create email
   const CreateEmail = (email, password) => {
@@ -71,13 +72,15 @@ const UseFirebase = () => {
       setIsLoading(false);
     });
   }, [user]);
+
   // admin check
   useEffect(() => {
     fetch(`https://cryptic-plains-45363.herokuapp.com/users/${user?.email}`)
       .then((res) => res.json())
-      .then((data) => setAdmin(data.admin));
-  }, [user?.email]);
-
+      .then((data) => {
+        setAdmin(data.admin);
+      });
+  }, [user.email]);
   return {
     user,
     setUser,

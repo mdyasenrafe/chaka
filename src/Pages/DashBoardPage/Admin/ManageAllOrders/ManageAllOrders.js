@@ -50,7 +50,7 @@ const ManageAllOrders = () => {
           .then((res) => {
             if (res.data.modifiedCount > 0) {
               window.location.reload(false);
-              swal(`${user.displayName} Order has Appove now`, {
+              swal(`${user?.displayName} Order has Appove now`, {
                 icon: "success",
               });
             }

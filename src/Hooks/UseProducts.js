@@ -14,7 +14,6 @@ const UseProducts = () => {
         setLoading(false);
       });
   }, []);
-  console.log(manageProducts);
   return {
     products,
     loading,
