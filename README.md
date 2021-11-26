@@ -7,8 +7,7 @@ Chaka is a Online bike sales website. It is a Mern Statck Project. User Can Log 
 ## Features
 
 - user can log in
-- user can delete select services
-- user can find order history
+- User Can log in to this site. The user can show his/her order history. the user can order this site.
 - admin can add services
 - admin add can appove user select services
 - admin add can delete user select services
