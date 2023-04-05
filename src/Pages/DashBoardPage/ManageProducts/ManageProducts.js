@@ -13,7 +13,7 @@ const ManageProducts = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch(`https://cryptic-plains-45363.herokuapp.com/products/${id}`, {
+        fetch(`https://chaka-server.onrender.com/products/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

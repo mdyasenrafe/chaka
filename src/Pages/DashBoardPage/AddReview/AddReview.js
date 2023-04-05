@@ -15,7 +15,7 @@ const AddReview = () => {
   let history = useHistory();
   const onSubmit = (data) => {
     axios
-      .post("https://cryptic-plains-45363.herokuapp.com/reviews", data)
+      .post("https://chaka-server.onrender.com/reviews", data)
       .then((res) => {
         if (res.data.acknowledged) {
           swal("Your Review has been Added", {

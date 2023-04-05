@@ -8,7 +8,7 @@ const UseOrders = () => {
   let [loading, setLoading] = useState(true);
   let [color, setColor] = useState("#ffffff");
   useEffect(() => {
-    fetch("https://cryptic-plains-45363.herokuapp.com/orders")
+    fetch("https://chaka-server.onrender.com/orders")
       .then((res) => res.json())
       .then((data) => {
         const filterMyOrders = data.filter(

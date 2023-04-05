@@ -14,7 +14,7 @@ const MyOrders = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch(`https://cryptic-plains-45363.herokuapp.com/orders/${id}`, {
+        fetch(`https://chaka-server.onrender.com/orders/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

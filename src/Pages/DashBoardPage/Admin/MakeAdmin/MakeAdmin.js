@@ -17,7 +17,7 @@ const MakeAdmin = () => {
   const onSubmit = (data) => {
     data["role"] = "admin";
     axios
-      .put(`https://cryptic-plains-45363.herokuapp.com/users/admin`, data)
+      .put(`https://chaka-server.onrender.com/users/admin`, data)
       .then((res) => {
         if (res?.data?.modifiedCount > 0) {
           swal("Your Aceount is Admin Now", {

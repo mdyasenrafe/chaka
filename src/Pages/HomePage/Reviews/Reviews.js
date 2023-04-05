@@ -12,7 +12,7 @@ SwiperCore.use([Navigation]);
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("https://cryptic-plains-45363.herokuapp.com/reviews")
+    fetch("https://chaka-server.onrender.com/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);

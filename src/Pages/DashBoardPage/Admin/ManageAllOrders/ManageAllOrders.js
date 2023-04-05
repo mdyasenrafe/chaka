@@ -17,7 +17,7 @@ const ManageAllOrders = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch(`https://cryptic-plains-45363.herokuapp.com/orders/${id}`, {
+        fetch(`https://chaka-server.onrender.com/orders/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -45,10 +45,7 @@ const ManageAllOrders = () => {
     }).then((willDelete) => {
       if (willDelete) {
         axios
-          .put(
-            `https://cryptic-plains-45363.herokuapp.com/orders/${data._id}`,
-            data
-          )
+          .put(`https://chaka-server.onrender.com/orders/${data._id}`, data)
           .then((res) => {
             if (res.data.modifiedCount > 0) {
               swal({

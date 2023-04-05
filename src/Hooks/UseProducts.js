@@ -6,7 +6,7 @@ const UseProducts = () => {
   let [loading, setLoading] = useState(true);
   let [color, setColor] = useState("#ffffff");
   useEffect(() => {
-    fetch("https://cryptic-plains-45363.herokuapp.com/products")
+    fetch("https://chaka-server.onrender.com/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

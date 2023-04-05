@@ -16,7 +16,7 @@ const AddProducts = () => {
   let history = useHistory();
   const onSubmit = (data) => {
     axios
-      .post("https://cryptic-plains-45363.herokuapp.com/products", data)
+      .post("https://chaka-server.onrender.com/products", data)
       .then((res) => {
         if (res?.data?.acknowledged) {
           swal("Your Product has been Added", {

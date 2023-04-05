@@ -35,7 +35,7 @@ const Resigter = () => {
         setError("");
         setIsLoading(false);
         axios
-          .post("https://cryptic-plains-45363.herokuapp.com/users", data)
+          .post("https://chaka-server.onrender.com/users", data)
           .then((res) => {
             if (res.data.acknowledged) {
               swal(

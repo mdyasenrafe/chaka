@@ -27,14 +27,12 @@ const Purchase = () => {
   const onSubmit = (data) => {
     data["status"] = "pending";
     data["image"] = findProducts?.image;
-    axios
-      .post("https://cryptic-plains-45363.herokuapp.com/orders", data)
-      .then((res) => {
-        if (res.data.acknowledged) {
-          swal("Good job!", "Your Orders is Succesfully Order now", "success");
-          history.push("/dashboard/my-orders");
-        }
-      });
+    axios.post("https://chaka-server.onrender.com/orders", data).then((res) => {
+      if (res.data.acknowledged) {
+        swal("Good job!", "Your Orders is Succesfully Order now", "success");
+        history.push("/dashboard/my-orders");
+      }
+    });
   };
 
   return (

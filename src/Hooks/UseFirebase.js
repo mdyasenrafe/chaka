@@ -75,7 +75,7 @@ const UseFirebase = () => {
 
   // admin check
   useEffect(() => {
-    fetch(`https://cryptic-plains-45363.herokuapp.com/users/${user?.email}`)
+    fetch(`https://chaka-server.onrender.com/users/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setAdmin(data.admin);
